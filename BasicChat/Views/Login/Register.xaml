@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:controls="clr-namespace:NControl.Controls;assembly=NControl.Controls"
+             mc:Ignorable="d"
+             x:Class="BasicChat.Views.Login.Register" BackgroundColor="MediumSeaGreen" Padding="10">
+    <Grid >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="5"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+
+        <Label Text="Sign up" HorizontalOptions="Start" VerticalOptions="Center" VerticalTextAlignment="Center" FontSize="32"  FontAttributes="Bold" Margin="10" TextColor="White"
+               Grid.Row="0"/>
+        <Label Text="X" HorizontalOptions="End" VerticalOptions="Center" VerticalTextAlignment="Center" FontSize="32"   Margin="10" TextColor="White"
+               Grid.Row="0">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding GoBackCommand}"/>
+            </Label.GestureRecognizers>
+        </Label>
+        <controls:FloatingLabelControl Placeholder="First Name" Text="{Binding FirstName}" Keyboard="Text" BackgroundColor="Transparent" LabelFontSize="12" 
+                                        Grid.Row="2" PlaceholderColor="White" Margin="15,0" PlaceholderFocusedColor="MediumPurple" TextColor="White"  />
+        <controls:FloatingLabelControl Placeholder="Last Name" Text="{Binding LastName}" Keyboard="Text" BackgroundColor="Transparent" LabelFontSize="12" 
+                                       Grid.Row="3" PlaceholderColor="White" Margin="15,0" PlaceholderFocusedColor="MediumPurple" TextColor="White"  />
+        <controls:FloatingLabelControl Placeholder="Email" Text="{Binding Email}" Keyboard="Email" BackgroundColor="Transparent" LabelFontSize="12" 
+                                       Grid.Row="4" PlaceholderColor="White" Margin="15,0" PlaceholderFocusedColor="MediumPurple" TextColor="White"  />
+        <controls:FloatingLabelControl Placeholder="Username" Text="{Binding Username}" Keyboard="Email" BackgroundColor="Transparent" LabelFontSize="12" 
+                                       Grid.Row="5" PlaceholderColor="White" Margin="15,0" PlaceholderFocusedColor="MediumPurple" TextColor="White"  />
+        <controls:FloatingLabelControl Placeholder="Password" Text="{Binding Password}" IsPassword="True" BackgroundColor="Transparent" LabelFontSize="12"
+                                        Grid.Row="6" PlaceholderColor="White" Margin="15,0" PlaceholderFocusedColor="MediumPurple" TextColor="White"/>
+
+        <Button Text="Sign up"  Margin="20" CornerRadius="20" BackgroundColor="Transparent" BorderColor="White" BorderWidth="2"  TextColor="White"
+                FontSize="Small" Grid.Row="8" Command="{Binding RegisterCommand}"/>
+    </Grid>
+</ContentPage>

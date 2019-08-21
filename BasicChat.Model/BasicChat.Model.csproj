@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Api\AuthenticationRequest.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Api\AuthenticationRequest.cs" />
+  </ItemGroup>
+
+</Project>

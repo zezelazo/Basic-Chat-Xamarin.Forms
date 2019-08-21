@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" Title="DM" IconImageSource="message" BackgroundColor="Black"
+             x:Class="BasicChat.Views.DM">
+    <Grid RowSpacing="0" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="100" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="3*" />
+            <RowDefinition Height="100" />
+            <RowDefinition Height="100" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="5"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Label Text="Direct Message" Grid.ColumnSpan="3"  FontSize="Large" Margin="5" TextColor="White" BackgroundColor="Transparent"></Label>
+        <Frame Grid.Row="1" Grid.ColumnSpan="3" BackgroundColor="Red" />
+        <Frame Grid.Row="2" Grid.RowSpan="2" Grid.ColumnSpan="3" BackgroundColor="Blue" />
+        <Frame Grid.Row="5" Grid.Column="0" BackgroundColor="Orange" />
+        <Frame Grid.Row="5" Grid.Column="2" BackgroundColor="Yellow" />
+
+        <StackLayout Grid.Row="6" HorizontalOptions="EndAndExpand"  Spacing="0"
+                     Grid.ColumnSpan="3" Orientation="Horizontal"
+                     Padding="3" BackgroundColor="White">
+            <Frame BackgroundColor="Orange">
+                <Label TextColor="Black" Text="demo"></Label>
+            </Frame>
+            <Frame  BackgroundColor="Yellow"   />
+        </StackLayout>
+    </Grid>
+</ContentPage>

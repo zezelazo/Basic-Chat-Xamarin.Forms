@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:controls="clr-namespace:NControl.Controls;assembly=NControl.Controls"
+             xmlns:login="clr-namespace:BasicChat.ViewModels.Login;assembly=BasicChat"
+             mc:Ignorable="d" BackgroundColor="MediumPurple" Padding="10"
+             x:Class="BasicChat.Views.Login.Login">
+    <ContentPage.BindingContext>
+        <login:LoginViewModel/>
+    </ContentPage.BindingContext>
+    <Grid >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="5"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/> 
+        </Grid.RowDefinitions>
+
+
+        <Label Text="Login" HorizontalOptions="Start" VerticalOptions="Center" 
+               VerticalTextAlignment="Center" FontSize="32"  
+               FontAttributes="Bold" Margin="10" TextColor="White"
+               Grid.Row="0"/>
+
+        <controls:FloatingLabelControl Placeholder="Username" Text="{Binding Username}" Keyboard="Default"  
+                                       BackgroundColor="Transparent" LabelFontSize="12" 
+                                       Grid.Row="2" PlaceholderColor="White" Margin="15,0" 
+                                       PlaceholderFocusedColor="LightSeaGreen" TextColor="White"  />
+
+        <controls:FloatingLabelControl Placeholder="Password" Text="{Binding Password}" IsPassword="True" 
+                                       BackgroundColor="Transparent" LabelFontSize="12"
+                                        Grid.Row="3" PlaceholderColor="White" Margin="15,0" 
+                                       PlaceholderFocusedColor="LightSeaGreen" TextColor="White"/>
+
+        <Button Text="Login Now"  Margin="20" CornerRadius="20" BackgroundColor="Transparent" 
+                BorderColor="White" BorderWidth="2"  TextColor="White"
+                FontSize="Small" Grid.Row="5" Command="{Binding LoginCommand}"/>
+
+        <Label Text="SING UP" HorizontalOptions="Start" FontSize="Small"  
+               TextColor="White" Grid.Row="7" Margin="10,0,0,10">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer  Tapped="TapGestureRecognizer_OnTapped"/>
+            </Label.GestureRecognizers>
+        </Label>
+        <Label Text="FORGOT MY PASSWORD" HorizontalOptions="End" FontSize="Small" 
+               TextColor="White" Grid.Row="7" Margin="0,0,10,10"/>
+    </Grid>
+</ContentPage>
